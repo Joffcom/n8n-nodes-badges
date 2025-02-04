@@ -1,11 +1,12 @@
-import { IExecuteFunctions } from 'n8n-core';
-import {
+import type {
 	IDataObject,
+	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-	NodeOperationError,
 } from 'n8n-workflow';
+
+import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 
 import { makeBadge } from 'badge-maker';
 
@@ -28,8 +29,9 @@ export class Badges implements INodeType {
 		defaults: {
 			name: 'Badges',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
+		usableAsTool: true,
 		properties: [
 			{
 				displayName: 'Text',
