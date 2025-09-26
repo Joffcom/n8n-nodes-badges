@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-badges",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Create badges from your n8n workflows",
   "keywords": [
     "n8n-community-node-package",
@@ -47,7 +47,4 @@
   "peerDependencies": {
     "n8n-workflow": "*"
   },
-  "dependencies": {
-    "badge-maker": "^3.3.1"
-  }
 }

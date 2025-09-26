@@ -8,8 +8,6 @@ import type {
 
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 
-import { makeBadge } from 'badge-maker';
-
 type Format = {
 	message: string;
 	label?: string;
@@ -297,14 +295,14 @@ export class Badges implements INodeType {
 					}
 				}
 
-				const svg = makeBadge(format);
+				//const svg = makeBadge(format);
 
 				if (outputBinaryData) {
 					returnData.push({
 						json: items[itemIndex].json,
 						binary: {
 							[binaryPropertyName]: await this.helpers.prepareBinaryData(
-								Buffer.from(svg),
+								//Buffer.from(svg),
 								fileName,
 								'image/svg+xml',
 							),
@@ -314,7 +312,7 @@ export class Badges implements INodeType {
 				} else {
 					returnData.push({
 						json: {
-							data: svg,
+							data: 'test',
 						},
 						pairedItem: itemIndex,
 					});
